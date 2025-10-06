@@ -88,7 +88,7 @@ const App: React.FC = () => {
         <strong>Formador:</strong> Ana Silva - Engenheira de Software<br />
         <strong>Duração:</strong> 2 meses<br />
         <strong>Local:</strong> Online<br />
-        <strong>Preço:</strong> 15.000 Kz
+        <strong>Preço:</strong> 10.000 Kz
       </p>
       <a href="#inscrever" className="btn btn-course">Inscrever-se agora</a>
     </div>
@@ -103,7 +103,7 @@ const App: React.FC = () => {
         <strong>Formador:</strong> João Silva - 8 anos de experiência<br />
         <strong>Duração:</strong> 3 meses<br />
         <strong>Local:</strong> Presencial e Online<br />
-        <strong>Preço:</strong> 25.000 Kz
+        <strong>Preço:</strong> 12.500 Kz
       </p>
       <a href="#inscrever" className="btn btn-course">Inscrever-se agora</a>
     </div>
@@ -118,7 +118,7 @@ const App: React.FC = () => {
         <strong>Formador:</strong> Carlos Mendes - Engenheiro Full Stack<br />
         <strong>Duração:</strong> 4 meses<br />
         <strong>Local:</strong> Online e Presencial<br />
-        <strong>Preço:</strong> 35.000 Kz
+        <strong>Preço:</strong> 12.500 Kz
       </p>
       <a href="#inscrever" className="btn btn-course">Inscrever-se agora</a>
     </div>
@@ -133,7 +133,7 @@ const App: React.FC = () => {
         <strong>Formador:</strong> Nelson Wonder 😉<br />
         <strong>Duração:</strong> 5 meses<br />
         <strong>Local:</strong> Online<br />
-        <strong>Preço:</strong> 45.000 Kz
+        <strong>Preço:</strong> 12.500 Kz
       </p>
       <a href="#inscrever" className="btn btn-course">Inscrever-se agora</a>
     </div>
