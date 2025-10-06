@@ -1,0 +1,241 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa toda a altura da janela */
+  max-height: 700px;
+  overflow: hidden;
+}
+
+/* Slides */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+  animation: slideZoom 18s ease-in-out infinite;
+}
+
+@keyframes slideZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Texto do slide */
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  max-width: 85%;
+  animation: textFade 1.5s ease-out forwards;
+}
+
+@keyframes textFade {
+  from { opacity: 0; transform: translate(-50%, -55%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.slide-text h2 {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+}
+
+.slide-text p {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  margin-bottom: 1.5rem;
+  color: #f8fafc;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Botão Inscrever-se */
+.slide-text a {
+  background: linear-gradient(135deg, #ff3c3c, #c81414);
+  padding: 12px 32px;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.slide-text a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 60, 60, 0.8);
+}
+
+/* Botões de navegação */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Indicadores */
+.indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.indicators span {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.indicators span.active {
+  background: crimson;
+  transform: scale(1.3);
+}
+
+/* === Responsividade === */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .carousel {
+    height: 70vh;
+  }
+
+  .slide-text h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .slide-text p {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .carousel {
+    height: 80vh;
+  }
+
+  .slide-text {
+    top: 55%;
+    max-width: 90%;
+  }
+
+  .slide-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+  }
+
+  .slide-text a {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+
+  .prev, .next {
+    font-size: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .indicators {
+    gap: 8px;
+  }
+}
+
+/* Botão Inscrever-se */
+.slide-text a {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  text-decoration: none;
+  border: none;
+  padding: 10px 26px; /* menor e mais equilibrado */
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 40px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(220, 20, 60, 0.5);
+  animation: pulse 3s infinite;
+  transition: all 0.3s ease;
+}
+
+.slide-text a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 50, 80, 0.8);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .slide-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+  }
+
+  .slide-text a {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide-text p {
+    font-size: 0.9rem;
+  }
+
+  .slide-text a {
+    font-size: 0.85rem;
+    padding: 7px 18px;
+  }
+}
+
