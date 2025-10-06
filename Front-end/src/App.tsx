@@ -5,7 +5,6 @@ import Footer from "./components/footer";
 import Carrossel from "./components/FormadoresCrousel";
 import skilltech from "./assets/img/LogoTipoMain.jpg";
 import ContactForm from "./components/ContactForm";
-import logo_png from "./assets/img/logo_skill.png";
 import dayotech from "./assets/img/dayotech.jpg";
 import idiomaia from "./assets/img/idiomaia.png";
 import sotech from "./assets/img/sotech.jpg";
